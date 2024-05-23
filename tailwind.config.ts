@@ -15,11 +15,27 @@ const config: Config = {
       },
       colors: {
         gray: {
+          200: '#AFAFAF',
+          300: '#8C8C8C',
+          400: '#6B6B6B',
+          500: '#5A5A5A',
+          550: '#4F4F4F',
+          600: '#4A4A4A',
+          650: '#3a3a3a',
           700: '#2C2C2C',
           800: '#202020',
           900: '#121212',
         },
+        main: {
+          500: '#54e8f2',
+        },
       },
+    },
+  },
+  variants: {
+    extend: {
+      backgroundColor: ['focus-within'],
+      borderColor: ['focus-within'],
     },
   },
   plugins: [],
