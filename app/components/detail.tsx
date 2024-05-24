@@ -1,3 +1,3 @@
 export default function Detail() {
-  return <div>Detail</div>
+  return <div className="w-1/5">Detail</div>
 }

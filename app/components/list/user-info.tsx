@@ -17,7 +17,7 @@ export default function UserInfo() {
           height={40}
           alt="avatar"
         />
-        <h2 className="font-semibold text-lg">John Doe</h2>
+        <h2 className="font-semibold text-lg">Gabriel Accetta</h2>
       </div>
       <div className="flex gap-3">
         <IconButton IconComponent={DotsThreeOutline} size={20} weight="fill" />
