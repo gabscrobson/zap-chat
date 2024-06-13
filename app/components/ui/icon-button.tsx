@@ -3,9 +3,10 @@ import { Icon, IconWeight } from '@phosphor-icons/react'
 interface IconButtonProps {
   IconComponent: Icon
   size: number
-  weight: IconWeight
+  weight?: IconWeight
   color?: string
   className?: string
+  onClick?: () => void
 }
 
 export default function IconButton({
@@ -14,6 +15,7 @@ export default function IconButton({
   weight,
   color,
   className,
+  onClick,
 }: IconButtonProps) {
   return (
     <IconComponent
@@ -21,6 +23,7 @@ export default function IconButton({
       weight={weight}
       color={color}
       className={`transition-colors cursor-pointer hover:text-neutral-400 ${className}`}
+      onClick={onClick}
     />
   )
 }

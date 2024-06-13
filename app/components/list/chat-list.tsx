@@ -58,7 +58,7 @@ export default function ChatList() {
               </div>
               <div className="flex gap-1 justify-between items-center">
                 <p className="text-sm text-gray-300 overflow-hidden whitespace-nowrap text-ellipsis flex-grow">
-                  Filha da puta desgraçado, voce roubou meu aplicativo
+                  Eu sou o Lucca Lima, desenvolvedor React, .NET
                 </p>
                 <div className="ml-2 w-5 h-4 bg-main-500 text-gray-900 rounded-full flex items-center justify-center text-xs font-semibold flex-shrink-0">
                   3
