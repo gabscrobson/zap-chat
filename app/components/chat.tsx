@@ -15,7 +15,7 @@ import { useState } from 'react'
 
 export default function Chat() {
   return (
-    <div className="flex-1 flex flex-col h-screen max-w-4xl">
+    <div className="flex-1 flex flex-col h-screen max-w-5xl">
       <ChatHeader />
       <ChatMessages />
       <ChatInput />
@@ -46,7 +46,7 @@ function ChatHeader() {
 
 function ChatMessages() {
   return (
-    <div className="flex-1 overflow-y-auto p-4">
+    <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-1">
       <div className="flex flex-col items-center">
         <div className="bg-gray-700 px-2 py-1 rounded-lg max-w-[70%]">
           <p className="text-xs">Today</p>
@@ -60,9 +60,28 @@ function ChatMessages() {
         <span className="text-xs text-gray-400 mt-1">16:29</span>
       </div>
 
+      <div className="flex flex-col items-start">
+        <div className="bg-gray-600 p-2 rounded-lg max-w-[70%]">
+          <p className="text-sm">
+            Hello, how are you? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Possimus, voluptatibus sequi eligendi totam
+            reiciendis, odit iure, deserunt ex ducimus illum labore ea autem
+            eaque corporis consequuntur quasi eveniet vel reprehenderit.
+          </p>
+        </div>
+        <span className="text-xs text-gray-400 mt-1">16:29</span>
+      </div>
+
       <div className="flex flex-col items-end">
         <div className="bg-main-800 p-2 rounded-lg max-w-[70%]">
           <p className="text-sm">Im fine, thank you!</p>
+        </div>
+        <span className="text-xs text-gray-400 mt-1">16:30</span>
+      </div>
+
+      <div className="flex flex-col items-end">
+        <div className="bg-main-800 p-2 rounded-lg max-w-[70%]">
+          <Image src="/example.webp" width={400} height={400} alt="image" />
         </div>
         <span className="text-xs text-gray-400 mt-1">16:30</span>
       </div>
@@ -115,7 +134,7 @@ function ChatInput() {
 
 function NoChatSelected() {
   return (
-    <div className="flex-1 h-screen flex flex-col gap-2 items-center justify-center">
+    <div className="flex-1 h-screen max-w-4xl flex flex-col gap-2 items-center justify-center">
       <Image src="/logo.svg" alt="Zap Chat logo" height={100} width={100} />
       <h1 className="text-xl font-bold">Zap Chat</h1>
       <p className="text-gray-300">Select a chat to start messaging</p>
