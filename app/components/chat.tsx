@@ -15,7 +15,7 @@ import { useState } from 'react'
 
 export default function Chat() {
   return (
-    <div className="flex-1 flex flex-col h-screen max-w-5xl">
+    <div className="flex-1 flex flex-col h-screen">
       <ChatHeader />
       <ChatMessages />
       <ChatInput />
