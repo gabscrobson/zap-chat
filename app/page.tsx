@@ -1,3 +1,5 @@
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 import Chat from './components/chat'
 import Detail from './components/detail'
 import List from './components/list/list'
@@ -17,6 +19,7 @@ export default function Home() {
       ) : (
         <Login />
       )}
+      <ToastContainer position="bottom-right" theme="dark" draggable />
     </>
   )
 }

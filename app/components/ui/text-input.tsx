@@ -26,7 +26,8 @@ export default function TextInput({
         id="search"
         placeholder={placeholder}
         className="w-full bg-transparent border-none focus:outline-none 
-            placeholder-gray-200 placeholder-opacity-100 font-light text-sm"
+            placeholder-gray-200 placeholder-opacity-100 font-light text-md"
+        autoComplete="off"
       />
     </label>
   )
