@@ -6,12 +6,14 @@ interface TextInputProps {
   IconComponent: Icon
   type: 'text' | 'email' | 'password'
   placeholder: string
+  name: string
 }
 
 export default function TextInput({
   IconComponent,
   type,
   placeholder,
+  name,
 }: TextInputProps) {
   return (
     <label
@@ -25,6 +27,7 @@ export default function TextInput({
         type={type}
         id="search"
         placeholder={placeholder}
+        name={name}
         className="w-full bg-transparent border-none focus:outline-none 
             placeholder-gray-200 placeholder-opacity-100 font-light text-md"
         autoComplete="off"
