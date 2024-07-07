@@ -2,6 +2,8 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import TextInput from './ui/text-input'
+import { Key } from '@phosphor-icons/react'
 
 interface ProfilePicture {
   file: File | null
@@ -25,18 +27,17 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <div>
+    <div className="flex justify-center items-start gap-52 h-screen bg-gray-800 text-white">
+      <div className="flex flex-col items-center gap-5 bg-gray-650 max-w-96 rounded p-7">
         <h2>Login</h2>
-        <form>
+        <form className="flex flex-col items-center justify-center gap-5">
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
         </form>
       </div>
-      <div></div>
-      <div>
+      <div className="flex flex-col items-center gap-5 bg-gray-650 max-w-96 rounded p-7">
         <h2>Create an account</h2>
-        <form>
+        <form className="flex flex-col items-center justify-center gap-5">
           <label htmlFor="profilePicture">
             <Image
               src={profilePicture.url}
@@ -55,6 +56,11 @@ export default function Login() {
           <input type="text" placeholder="username" />
           <input type="email" placeholder="email" />
           <input type="password" placeholder="password" />
+          <TextInput
+            IconComponent={Key}
+            type="password"
+            placeholder="Confirm password"
+          />
         </form>
       </div>
     </div>
