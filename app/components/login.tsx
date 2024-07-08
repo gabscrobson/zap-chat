@@ -56,6 +56,7 @@ export default function Login() {
     try {
       loginFormSchema.parse(formDataValues)
     } catch (error) {
+      setIsLoggingIn(false)
       if (error instanceof z.ZodError) {
         const errorMessage = error.errors[0].message
         return toast.error(errorMessage)
@@ -65,7 +66,8 @@ export default function Login() {
     const { email, password } = formDataValues
 
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      const res = await signInWithEmailAndPassword(auth, email, password)
+      console.log(res)
       toast.success('Logged in successfully')
     } catch (error) {
       toast.error('Failed to log in')
@@ -95,6 +97,7 @@ export default function Login() {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const errorMessage = error.errors[0].message
+        setIsSigningUp(false)
         return toast.error(errorMessage)
       }
     }

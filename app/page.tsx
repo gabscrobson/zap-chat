@@ -9,21 +9,41 @@ import Login from './components/login'
 import { useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './lib/firebase'
+import { useUserStore } from './lib/userStore'
+import Image from 'next/image'
 
 export default function Home() {
-  const user = true
+  const { currentUser, isLoading, fetchUserInfo } = useUserStore()
 
   useEffect(() => {
     const unSub = onAuthStateChanged(auth, (user) => {
-      console.log(user)
+      console.log('aqui')
+      if (user) fetchUserInfo(user.uid)
     })
 
-    return () => unSub()
-  }, [])
+    return () => {
+      unSub()
+    }
+  }, [fetchUserInfo])
+
+  console.log(currentUser)
+
+  if (isLoading)
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <Image
+          src="/logo.svg"
+          alt="Zap Chat logo"
+          height={200}
+          width={200}
+          className="animate-pulse select-none"
+        />
+      </div>
+    )
 
   return (
     <>
-      {user ? (
+      {currentUser ? (
         <div className="flex">
           <List />
           <Chat />
