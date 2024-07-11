@@ -1,7 +1,16 @@
 import { MagnifyingGlass, Plus } from '@phosphor-icons/react/dist/ssr'
 import IconButton from '../ui/icon-button'
+// import { useUserStore } from '@/app/lib/userStore'
+// import { useEffect } from 'react'
 
 export default function ChatList() {
+  // const { currentUser } = useUserStore()
+  // const { currentUser } = useUserStore()
+
+  // useEffect(() => {
+
+  // })
+
   return (
     <div className="flex flex-col flex-grow overflow-hidden">
       <div className="flex items-center gap-4 p-4">
@@ -15,6 +24,7 @@ export default function ChatList() {
           <input
             type="text"
             id="search"
+            name="searchChat"
             placeholder="Search"
             className="w-full bg-transparent border-none focus:outline-none 
             placeholder-gray-200 placeholder-opacity-100 font-light text-sm"

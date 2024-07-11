@@ -14,7 +14,10 @@ export const useUserStore = create<UserStore>()((set) => ({
   currentUser: null,
   isLoading: true,
   fetchUserInfo: async (uid: string) => {
-    if (!uid) return set({ currentUser: null, isLoading: false })
+    if (!uid) {
+      set({ currentUser: null, isLoading: false })
+      return
+    }
 
     try {
       const docRef = doc(db, 'users', uid)
@@ -22,13 +25,13 @@ export const useUserStore = create<UserStore>()((set) => ({
 
       if (docSnap.exists()) {
         const data = docSnap.data()
-        return set({ currentUser: data, isLoading: false })
+        set({ currentUser: data, isLoading: false })
       } else {
-        return set({ currentUser: null, isLoading: false })
+        set({ currentUser: null, isLoading: false })
       }
     } catch (error) {
       console.log(error)
-      return set({ currentUser: null, isLoading: false })
+      set({ currentUser: null, isLoading: false })
     }
   },
 }))

@@ -134,6 +134,8 @@ export default function Login() {
         profilePicture: imgUrl,
       })
 
+      await signInWithEmailAndPassword(auth, email, password)
+
       toast.success('Signed up successfully')
     } catch (error) {
       toast.error('Failed to sign up')

@@ -17,8 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     const unSub = onAuthStateChanged(auth, (user) => {
-      console.log('aqui')
-      if (user) fetchUserInfo(user.uid)
+      fetchUserInfo(user?.uid || '')
     })
 
     return () => {
